@@ -1,0 +1,3 @@
+/home/lihai/Share/udt/udt4/CMakeFiles/rebuild_cache.dir
+/home/lihai/Share/udt/udt4/CMakeFiles/udt.dir
+/home/lihai/Share/udt/udt4/CMakeFiles/edit_cache.dir
