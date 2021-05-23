@@ -121,6 +121,7 @@ public:
 
    #pragma update
    uint64_t* getGopDeadlines();
+   uint64_t* getGopEndSeqs();
 
 private:
    void increase();
@@ -162,6 +163,7 @@ private:
 
    #pragma update
    uint64_t* m_gopDeadlines;
+   uint64_t* m_gopEndSeqs;
 private:
    CSndBuffer(const CSndBuffer&);
    CSndBuffer& operator=(const CSndBuffer&);

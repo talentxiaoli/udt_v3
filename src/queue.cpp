@@ -530,7 +530,7 @@ int32_t deadGopIndex = -1;
 {
    CSndQueue* self = (CSndQueue*)param;
 
-   usleep(20000);
+   usleep(40000);
 
    while (!self->m_bClosing)
    {
@@ -550,37 +550,32 @@ int32_t deadGopIndex = -1;
          CUDT* uu;
          int64_t gopIndex;
          uint64_t* gopDeadlines;
+         uint64_t* gopEndSeqs;
          if (self->m_pSndUList->pop(addr, pkt, gopIndex, uu) < 0)
             continue;
          gopDeadlines = uu->m_pSndBuffer->getGopDeadlines();
-         pkt.m_iGopIndex = gopIndex;
+         gopEndSeqs = uu->m_pSndBuffer->getGopEndSeqs();
+
+         pkt.m_iGopIndex |= gopIndex;
+         pkt.m_iGopIndex |= (gopEndSeqs[gopIndex] << 16);
 
          printf("seqno = %d --- gopIndex = %ld --- ts = %lu --- deadline = %lu\n", pkt.m_iSeqNo, gopIndex, ts, gopDeadlines[gopIndex]);
          if (ts > gopDeadlines[gopIndex])
          {
             printf("超时了\n");
-            // if (gopIndex > maxGopIndex)
-            // {
-            //    maxGopIndex = gopIndex;
-            // }
             if (gopIndex != deadGopIndex)
             {
                deadGopIndex = gopIndex;
             }
          }
 
-         // if (maxGopIndex > -1)
-         // {
-         //    pkt.m_iGopFlag = 0;
-         //    pkt.m_iGopFlag |= 0x80000000;
-         //    pkt.m_iGopFlag |= maxGopIndex;
-         // }
          if (deadGopIndex > -1)
          {
             pkt.m_iGopFlag = 0;
             pkt.m_iGopFlag |= 0x80000000;
             pkt.m_iGopFlag |= deadGopIndex;
          }
+
 
          self->m_pChannel->sendto(addr, pkt);
       }

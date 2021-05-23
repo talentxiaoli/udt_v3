@@ -110,8 +110,9 @@ int main(int argc, char* argv[])
    #endif
 
    int totalSendSize = 0;
-   for (int i = 0; i < 3; i ++)
+   for (int i = 0; i < 10; i ++)
    {
+      usleep(30000);
       memset(data, i + 48, size);
       for (int j = 0;j < 5;j++)
       {
@@ -134,7 +135,6 @@ int main(int argc, char* argv[])
             break;
       }
       gopIndex++;
-      usleep(20000);
    }
 
    printf("tsize = %d\n", totalSendSize);

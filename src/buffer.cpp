@@ -55,7 +55,8 @@ m_iNextMsgNo(1),
 m_iSize(size),
 m_iMSS(mss),
 m_iCount(0),
-m_gopDeadlines(new uint64_t[8192])
+m_gopDeadlines(new uint64_t[8192]),
+m_gopEndSeqs(new uint64_t[8192])
 {
    // initial physical buffer of "size"
    m_pBuffer = new Buffer;
@@ -112,6 +113,7 @@ CSndBuffer::~CSndBuffer()
    }
 
    delete m_gopDeadlines;
+   delete m_gopEndSeqs;
 
    #ifndef WIN32
       pthread_mutex_destroy(&m_BufLock);
@@ -125,15 +127,25 @@ uint64_t* CSndBuffer::getGopDeadlines()
    return m_gopDeadlines;
 }
 
+uint64_t* CSndBuffer::getGopEndSeqs()
+{
+   return m_gopEndSeqs;
+}
+
 
 int32_t lastGopIndex = -1;
 uint64_t last_time = 0;
+uint64_t tCounts = 0;
 
 void CSndBuffer::addBuffer(const char* data, int len, int gopIndex, int ttl, bool order)
 {
    int size = len / m_iMSS;
    if ((len % m_iMSS) != 0)
       size ++;
+   
+   tCounts += size;
+
+   m_gopEndSeqs[gopIndex] = tCounts;
 
    // dynamically increase sender buffer
    while (size + m_iCount >= m_iSize)

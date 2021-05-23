@@ -2039,6 +2039,7 @@ void CUDT::processCtrl(CPacket& ctrlpkt)
 
       // update sending variables
       m_iSndLastDataAck = ack;
+      printf("ackackacakack = %d\n", m_iSndLastDataAck);
       m_pSndLossList->remove(CSeqNo::decseq(m_iSndLastDataAck));
 
       CGuard::leaveCS(m_AckLock);
@@ -2407,11 +2408,11 @@ int CUDT::processData(CUnit* unit)
 {
    CPacket& packet = unit->m_Packet;
 
-   // printf("seqno = %d --- flag = %d --- gopIndex = %d\n", packet.m_iSeqNo, (packet.m_iGopFlag & 0x80000000) >> 31, (packet.m_iGopFlag & 0x7FFFFFFF));
 
    int32_t flag = (packet.m_iGopFlag & 0x80000000) >> 31;
    int32_t gopIndex = (packet.m_iGopFlag & 0x7FFFFFFF);
-   int32_t gopIndex2 = packet.m_iGopIndex;
+   int32_t gopIndex2 = packet.m_iGopIndex & 0x0000FFFF;
+   int32_t gopEndSeq = (packet.m_iGopIndex & 0xFFFF0000) >> 16;
    if (flag == 1)
    {
       if (gopIndex != recvGopIndex)
@@ -2420,6 +2421,12 @@ int CUDT::processData(CUnit* unit)
          if (packet.m_iSeqNo >= m_iRcvCurrSeqNo)
          {
             m_iRcvCurrSeqNo = packet.m_iSeqNo;
+         }
+
+         //重传超时
+         if (packet.m_iSeqNo < m_iRcvCurrSeqNo)
+         {
+            m_pRcvLossList->remove(0, gopEndSeq);
          }
          
          recvGopIndex = gopIndex;
@@ -2439,7 +2446,7 @@ int CUDT::processData(CUnit* unit)
       }
    }
 
-   printf("seqno = %d --- flag = %d --- gopIndex = %d --- gopIndex2 = %d\n", packet.m_iSeqNo, (packet.m_iGopFlag & 0x80000000) >> 31, (packet.m_iGopFlag & 0x7FFFFFFF), packet.m_iGopIndex);
+   printf("seqno = %d --- flag = %d --- gopIndex = %d --- gopIndex2 = %d --- gopEndSeq = %d\n", packet.m_iSeqNo, (packet.m_iGopFlag & 0x80000000) >> 31, (packet.m_iGopFlag & 0x7FFFFFFF), gopIndex2, gopEndSeq);
 
    // Just heard from the peer, reset the expiration count.
    m_iEXPCount = 1;
@@ -2479,7 +2486,7 @@ int CUDT::processData(CUnit* unit)
       lossdata[0] = CSeqNo::incseq(m_iRcvCurrSeqNo) | 0x80000000;
       lossdata[1] = CSeqNo::decseq(packet.m_iSeqNo);
 
-      printf("lossdata[0] = %d ---- lossdata[1] = %d\n", lossdata[0] & 0x7FFFFFFF, lossdata[1]);
+      //printf("lossdata[0] = %d ---- lossdata[1] = %d\n", lossdata[0] & 0x7FFFFFFF, lossdata[1]);
 
       // Generate loss report immediately.
       sendCtrl(3, NULL, lossdata, (CSeqNo::incseq(m_iRcvCurrSeqNo) == CSeqNo::decseq(packet.m_iSeqNo)) ? 1 : 2);
