@@ -12,6 +12,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/udt.dir/src/queue.cpp.o"
   "CMakeFiles/udt.dir/src/common.cpp.o"
   "CMakeFiles/udt.dir/src/window.cpp.o"
+  "CMakeFiles/udt.dir/src/RrConfig.cpp.o"
   "libudt.pdb"
   "libudt.a"
 )

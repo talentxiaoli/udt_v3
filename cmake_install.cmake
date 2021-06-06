@@ -1,4 +1,4 @@
-# Install script for directory: /home/lihai/Share/udt/udt4
+# Install script for directory: /home/lihai/Share/udt/udt4_dev3
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/lihai/Share/udt/udt4/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/lihai/Share/udt/udt4_dev3/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

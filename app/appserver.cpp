@@ -123,7 +123,7 @@ DWORD WINAPI recvdata(LPVOID usocket)
    int size = 1448;
    data = new char[size];
 
-   FILE* fp = fopen("res.txt", "a");
+   FILE* fp = fopen("res.txt", "wb+");
 
    int totalSize = 0;
 

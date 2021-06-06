@@ -156,10 +156,11 @@ void CSndBuffer::addBuffer(const char* data, int len, int gopIndex, int ttl, boo
    inorder <<= 29;
 
    uint64_t bitrate = 3500 * 1024;
+   uint64_t bast_time = 20 * 10e3;
 
    if (gopIndex > lastGopIndex) 
    {
-      m_gopDeadlines[gopIndex] = time + (uint64_t)(len * 8 * 1.0 * 1e6 / bitrate);
+      m_gopDeadlines[gopIndex] = bast_time + time + (uint64_t)(len * 8 * 1.0 * 1e6 / bitrate);
       if (lastGopIndex > -1)
          m_gopDeadlines[gopIndex] = m_gopDeadlines[gopIndex] + m_gopDeadlines[lastGopIndex] - last_time ;
       last_time = time;
@@ -434,13 +435,7 @@ int CRcvBuffer::addData(CUnit* unit, int offset)
 int CRcvBuffer::readBuffer(char* data, int len)
 {
    int p = m_iStartPos;
-   // #pragma version3
-   // if (m_iBeginPos > m_iStartPos)
-   //    p = m_iBeginPos;
    int lastack = m_iLastAckPos;
-   // #pragma version3
-   // if (m_iEndPos < m_iLastAckPos)
-   //    lastack = m_iEndPos;
    int rs = len;
    //printf("pppppp = %d === lastack = %d\n", p, lastack);
 
@@ -450,7 +445,6 @@ int CRcvBuffer::readBuffer(char* data, int len)
       if (m_pUnit[p] == NULL) 
       {
          ++p;
-     //    printf("hehehehe = %d\n", p);
          -- m_pUnitQueue->m_iCount;
          continue;
       }

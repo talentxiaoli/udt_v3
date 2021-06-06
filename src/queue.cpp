@@ -518,8 +518,8 @@ void CSndQueue::init(CChannel* c, CTimer* t)
    #endif
 }
 
-int32_t maxGopIndex = -1;
 int32_t deadGopIndex = -1;
+int32_t maxSndSeq = -1;
 
 #pragma update
 #ifndef WIN32
@@ -556,24 +556,36 @@ int32_t deadGopIndex = -1;
          gopDeadlines = uu->m_pSndBuffer->getGopDeadlines();
          gopEndSeqs = uu->m_pSndBuffer->getGopEndSeqs();
 
-         pkt.m_iGopIndex |= gopIndex;
-         pkt.m_iGopIndex |= (gopEndSeqs[gopIndex] << 16);
+         pkt.m_iExtension1 |= gopIndex;
+         pkt.m_iExtension1 |= (gopEndSeqs[gopIndex] << 16);
 
-         printf("seqno = %d --- gopIndex = %ld --- ts = %lu --- deadline = %lu\n", pkt.m_iSeqNo, gopIndex, ts, gopDeadlines[gopIndex]);
+         if (pkt.m_iSeqNo > maxSndSeq)
+         {
+            printf("正常 --- seqno = %d --- gopIndex = %ld gopEndSeqs = %ld --- ts = %lu --- deadline = %lu --- ", pkt.m_iSeqNo, gopIndex, gopEndSeqs[gopIndex], ts, gopDeadlines[gopIndex]);
+            maxSndSeq = pkt.m_iSeqNo;
+         }
+         else 
+         {
+            printf("重传 --- seqno = %d --- gopIndex = %ld gopEndSeqs = %ld --- ts = %lu --- deadline = %lu --- ", pkt.m_iSeqNo, gopIndex, gopEndSeqs[gopIndex], ts, gopDeadlines[gopIndex]);
+         }
          if (ts > gopDeadlines[gopIndex])
          {
-            printf("超时了\n");
+            printf("超时\n");
             if (gopIndex != deadGopIndex)
             {
                deadGopIndex = gopIndex;
             }
          }
+         else 
+         {
+            printf("\n");
+         }
 
          if (deadGopIndex > -1)
          {
-            pkt.m_iGopFlag = 0;
-            pkt.m_iGopFlag |= 0x80000000;
-            pkt.m_iGopFlag |= deadGopIndex;
+            pkt.m_iExtension2 = 0;
+            pkt.m_iExtension2 |= 0x80000000;
+            pkt.m_iExtension2 |= deadGopIndex;
          }
 
 

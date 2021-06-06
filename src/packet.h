@@ -66,8 +66,8 @@ public:
    int32_t& m_iTimeStamp;               // alias: timestamp
    int32_t& m_iID;			// alias: socket ID
    #pragma update
-   int32_t& m_iGopIndex;
-   int32_t& m_iGopFlag;
+   int32_t& m_iExtension1;
+   int32_t& m_iExtension2;
    char*& m_pcData;                     // alias: data/control information
 
    static const int m_iPktHdrSize;	// packet header size

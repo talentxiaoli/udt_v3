@@ -6,5 +6,5 @@ CXX_FLAGS =   -Wall -Wno-unused-function -std=c++11
 
 CXX_DEFINES = -DGNU_SOURCE -DPOSIX_C_SOURCE -D__UNIX
 
-CXX_INCLUDES = -I/home/lihai/Share/udt/udt4/src 
+CXX_INCLUDES = -I/home/lihai/Share/udt/udt4_dev3/src 
 

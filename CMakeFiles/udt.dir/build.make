@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lihai/Share/udt/udt4
+CMAKE_SOURCE_DIR = /home/lihai/Share/udt/udt4_dev3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lihai/Share/udt/udt4
+CMAKE_BINARY_DIR = /home/lihai/Share/udt/udt4_dev3
 
 # Include any dependencies generated for this target.
 include CMakeFiles/udt.dir/depend.make
@@ -59,172 +59,185 @@ include CMakeFiles/udt.dir/flags.make
 
 CMakeFiles/udt.dir/src/api.cpp.o: CMakeFiles/udt.dir/flags.make
 CMakeFiles/udt.dir/src/api.cpp.o: src/api.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/udt.dir/src/api.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/api.cpp.o -c /home/lihai/Share/udt/udt4/src/api.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4_dev3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/udt.dir/src/api.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/api.cpp.o -c /home/lihai/Share/udt/udt4_dev3/src/api.cpp
 
 CMakeFiles/udt.dir/src/api.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udt.dir/src/api.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4/src/api.cpp > CMakeFiles/udt.dir/src/api.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4_dev3/src/api.cpp > CMakeFiles/udt.dir/src/api.cpp.i
 
 CMakeFiles/udt.dir/src/api.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udt.dir/src/api.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4/src/api.cpp -o CMakeFiles/udt.dir/src/api.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4_dev3/src/api.cpp -o CMakeFiles/udt.dir/src/api.cpp.s
 
 CMakeFiles/udt.dir/src/buffer.cpp.o: CMakeFiles/udt.dir/flags.make
 CMakeFiles/udt.dir/src/buffer.cpp.o: src/buffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/udt.dir/src/buffer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/buffer.cpp.o -c /home/lihai/Share/udt/udt4/src/buffer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4_dev3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/udt.dir/src/buffer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/buffer.cpp.o -c /home/lihai/Share/udt/udt4_dev3/src/buffer.cpp
 
 CMakeFiles/udt.dir/src/buffer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udt.dir/src/buffer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4/src/buffer.cpp > CMakeFiles/udt.dir/src/buffer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4_dev3/src/buffer.cpp > CMakeFiles/udt.dir/src/buffer.cpp.i
 
 CMakeFiles/udt.dir/src/buffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udt.dir/src/buffer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4/src/buffer.cpp -o CMakeFiles/udt.dir/src/buffer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4_dev3/src/buffer.cpp -o CMakeFiles/udt.dir/src/buffer.cpp.s
 
 CMakeFiles/udt.dir/src/cache.cpp.o: CMakeFiles/udt.dir/flags.make
 CMakeFiles/udt.dir/src/cache.cpp.o: src/cache.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/udt.dir/src/cache.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/cache.cpp.o -c /home/lihai/Share/udt/udt4/src/cache.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4_dev3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/udt.dir/src/cache.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/cache.cpp.o -c /home/lihai/Share/udt/udt4_dev3/src/cache.cpp
 
 CMakeFiles/udt.dir/src/cache.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udt.dir/src/cache.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4/src/cache.cpp > CMakeFiles/udt.dir/src/cache.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4_dev3/src/cache.cpp > CMakeFiles/udt.dir/src/cache.cpp.i
 
 CMakeFiles/udt.dir/src/cache.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udt.dir/src/cache.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4/src/cache.cpp -o CMakeFiles/udt.dir/src/cache.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4_dev3/src/cache.cpp -o CMakeFiles/udt.dir/src/cache.cpp.s
 
 CMakeFiles/udt.dir/src/ccc.cpp.o: CMakeFiles/udt.dir/flags.make
 CMakeFiles/udt.dir/src/ccc.cpp.o: src/ccc.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/udt.dir/src/ccc.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/ccc.cpp.o -c /home/lihai/Share/udt/udt4/src/ccc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4_dev3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/udt.dir/src/ccc.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/ccc.cpp.o -c /home/lihai/Share/udt/udt4_dev3/src/ccc.cpp
 
 CMakeFiles/udt.dir/src/ccc.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udt.dir/src/ccc.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4/src/ccc.cpp > CMakeFiles/udt.dir/src/ccc.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4_dev3/src/ccc.cpp > CMakeFiles/udt.dir/src/ccc.cpp.i
 
 CMakeFiles/udt.dir/src/ccc.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udt.dir/src/ccc.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4/src/ccc.cpp -o CMakeFiles/udt.dir/src/ccc.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4_dev3/src/ccc.cpp -o CMakeFiles/udt.dir/src/ccc.cpp.s
 
 CMakeFiles/udt.dir/src/channel.cpp.o: CMakeFiles/udt.dir/flags.make
 CMakeFiles/udt.dir/src/channel.cpp.o: src/channel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/udt.dir/src/channel.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/channel.cpp.o -c /home/lihai/Share/udt/udt4/src/channel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4_dev3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/udt.dir/src/channel.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/channel.cpp.o -c /home/lihai/Share/udt/udt4_dev3/src/channel.cpp
 
 CMakeFiles/udt.dir/src/channel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udt.dir/src/channel.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4/src/channel.cpp > CMakeFiles/udt.dir/src/channel.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4_dev3/src/channel.cpp > CMakeFiles/udt.dir/src/channel.cpp.i
 
 CMakeFiles/udt.dir/src/channel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udt.dir/src/channel.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4/src/channel.cpp -o CMakeFiles/udt.dir/src/channel.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4_dev3/src/channel.cpp -o CMakeFiles/udt.dir/src/channel.cpp.s
 
 CMakeFiles/udt.dir/src/core.cpp.o: CMakeFiles/udt.dir/flags.make
 CMakeFiles/udt.dir/src/core.cpp.o: src/core.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/udt.dir/src/core.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/core.cpp.o -c /home/lihai/Share/udt/udt4/src/core.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4_dev3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/udt.dir/src/core.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/core.cpp.o -c /home/lihai/Share/udt/udt4_dev3/src/core.cpp
 
 CMakeFiles/udt.dir/src/core.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udt.dir/src/core.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4/src/core.cpp > CMakeFiles/udt.dir/src/core.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4_dev3/src/core.cpp > CMakeFiles/udt.dir/src/core.cpp.i
 
 CMakeFiles/udt.dir/src/core.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udt.dir/src/core.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4/src/core.cpp -o CMakeFiles/udt.dir/src/core.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4_dev3/src/core.cpp -o CMakeFiles/udt.dir/src/core.cpp.s
 
 CMakeFiles/udt.dir/src/epoll.cpp.o: CMakeFiles/udt.dir/flags.make
 CMakeFiles/udt.dir/src/epoll.cpp.o: src/epoll.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/udt.dir/src/epoll.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/epoll.cpp.o -c /home/lihai/Share/udt/udt4/src/epoll.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4_dev3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/udt.dir/src/epoll.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/epoll.cpp.o -c /home/lihai/Share/udt/udt4_dev3/src/epoll.cpp
 
 CMakeFiles/udt.dir/src/epoll.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udt.dir/src/epoll.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4/src/epoll.cpp > CMakeFiles/udt.dir/src/epoll.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4_dev3/src/epoll.cpp > CMakeFiles/udt.dir/src/epoll.cpp.i
 
 CMakeFiles/udt.dir/src/epoll.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udt.dir/src/epoll.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4/src/epoll.cpp -o CMakeFiles/udt.dir/src/epoll.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4_dev3/src/epoll.cpp -o CMakeFiles/udt.dir/src/epoll.cpp.s
 
 CMakeFiles/udt.dir/src/list.cpp.o: CMakeFiles/udt.dir/flags.make
 CMakeFiles/udt.dir/src/list.cpp.o: src/list.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/udt.dir/src/list.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/list.cpp.o -c /home/lihai/Share/udt/udt4/src/list.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4_dev3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/udt.dir/src/list.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/list.cpp.o -c /home/lihai/Share/udt/udt4_dev3/src/list.cpp
 
 CMakeFiles/udt.dir/src/list.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udt.dir/src/list.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4/src/list.cpp > CMakeFiles/udt.dir/src/list.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4_dev3/src/list.cpp > CMakeFiles/udt.dir/src/list.cpp.i
 
 CMakeFiles/udt.dir/src/list.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udt.dir/src/list.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4/src/list.cpp -o CMakeFiles/udt.dir/src/list.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4_dev3/src/list.cpp -o CMakeFiles/udt.dir/src/list.cpp.s
 
 CMakeFiles/udt.dir/src/md5.cpp.o: CMakeFiles/udt.dir/flags.make
 CMakeFiles/udt.dir/src/md5.cpp.o: src/md5.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/udt.dir/src/md5.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/md5.cpp.o -c /home/lihai/Share/udt/udt4/src/md5.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4_dev3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/udt.dir/src/md5.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/md5.cpp.o -c /home/lihai/Share/udt/udt4_dev3/src/md5.cpp
 
 CMakeFiles/udt.dir/src/md5.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udt.dir/src/md5.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4/src/md5.cpp > CMakeFiles/udt.dir/src/md5.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4_dev3/src/md5.cpp > CMakeFiles/udt.dir/src/md5.cpp.i
 
 CMakeFiles/udt.dir/src/md5.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udt.dir/src/md5.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4/src/md5.cpp -o CMakeFiles/udt.dir/src/md5.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4_dev3/src/md5.cpp -o CMakeFiles/udt.dir/src/md5.cpp.s
 
 CMakeFiles/udt.dir/src/packet.cpp.o: CMakeFiles/udt.dir/flags.make
 CMakeFiles/udt.dir/src/packet.cpp.o: src/packet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/udt.dir/src/packet.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/packet.cpp.o -c /home/lihai/Share/udt/udt4/src/packet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4_dev3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/udt.dir/src/packet.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/packet.cpp.o -c /home/lihai/Share/udt/udt4_dev3/src/packet.cpp
 
 CMakeFiles/udt.dir/src/packet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udt.dir/src/packet.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4/src/packet.cpp > CMakeFiles/udt.dir/src/packet.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4_dev3/src/packet.cpp > CMakeFiles/udt.dir/src/packet.cpp.i
 
 CMakeFiles/udt.dir/src/packet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udt.dir/src/packet.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4/src/packet.cpp -o CMakeFiles/udt.dir/src/packet.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4_dev3/src/packet.cpp -o CMakeFiles/udt.dir/src/packet.cpp.s
 
 CMakeFiles/udt.dir/src/queue.cpp.o: CMakeFiles/udt.dir/flags.make
 CMakeFiles/udt.dir/src/queue.cpp.o: src/queue.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/udt.dir/src/queue.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/queue.cpp.o -c /home/lihai/Share/udt/udt4/src/queue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4_dev3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/udt.dir/src/queue.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/queue.cpp.o -c /home/lihai/Share/udt/udt4_dev3/src/queue.cpp
 
 CMakeFiles/udt.dir/src/queue.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udt.dir/src/queue.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4/src/queue.cpp > CMakeFiles/udt.dir/src/queue.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4_dev3/src/queue.cpp > CMakeFiles/udt.dir/src/queue.cpp.i
 
 CMakeFiles/udt.dir/src/queue.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udt.dir/src/queue.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4/src/queue.cpp -o CMakeFiles/udt.dir/src/queue.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4_dev3/src/queue.cpp -o CMakeFiles/udt.dir/src/queue.cpp.s
 
 CMakeFiles/udt.dir/src/common.cpp.o: CMakeFiles/udt.dir/flags.make
 CMakeFiles/udt.dir/src/common.cpp.o: src/common.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/udt.dir/src/common.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/common.cpp.o -c /home/lihai/Share/udt/udt4/src/common.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4_dev3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/udt.dir/src/common.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/common.cpp.o -c /home/lihai/Share/udt/udt4_dev3/src/common.cpp
 
 CMakeFiles/udt.dir/src/common.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udt.dir/src/common.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4/src/common.cpp > CMakeFiles/udt.dir/src/common.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4_dev3/src/common.cpp > CMakeFiles/udt.dir/src/common.cpp.i
 
 CMakeFiles/udt.dir/src/common.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udt.dir/src/common.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4/src/common.cpp -o CMakeFiles/udt.dir/src/common.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4_dev3/src/common.cpp -o CMakeFiles/udt.dir/src/common.cpp.s
 
 CMakeFiles/udt.dir/src/window.cpp.o: CMakeFiles/udt.dir/flags.make
 CMakeFiles/udt.dir/src/window.cpp.o: src/window.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/udt.dir/src/window.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/window.cpp.o -c /home/lihai/Share/udt/udt4/src/window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4_dev3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/udt.dir/src/window.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/window.cpp.o -c /home/lihai/Share/udt/udt4_dev3/src/window.cpp
 
 CMakeFiles/udt.dir/src/window.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udt.dir/src/window.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4/src/window.cpp > CMakeFiles/udt.dir/src/window.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4_dev3/src/window.cpp > CMakeFiles/udt.dir/src/window.cpp.i
 
 CMakeFiles/udt.dir/src/window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udt.dir/src/window.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4/src/window.cpp -o CMakeFiles/udt.dir/src/window.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4_dev3/src/window.cpp -o CMakeFiles/udt.dir/src/window.cpp.s
+
+CMakeFiles/udt.dir/src/RrConfig.cpp.o: CMakeFiles/udt.dir/flags.make
+CMakeFiles/udt.dir/src/RrConfig.cpp.o: src/RrConfig.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/Share/udt/udt4_dev3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/udt.dir/src/RrConfig.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udt.dir/src/RrConfig.cpp.o -c /home/lihai/Share/udt/udt4_dev3/src/RrConfig.cpp
+
+CMakeFiles/udt.dir/src/RrConfig.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udt.dir/src/RrConfig.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/Share/udt/udt4_dev3/src/RrConfig.cpp > CMakeFiles/udt.dir/src/RrConfig.cpp.i
+
+CMakeFiles/udt.dir/src/RrConfig.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udt.dir/src/RrConfig.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/Share/udt/udt4_dev3/src/RrConfig.cpp -o CMakeFiles/udt.dir/src/RrConfig.cpp.s
 
 # Object files for target udt
 udt_OBJECTS = \
@@ -240,7 +253,8 @@ udt_OBJECTS = \
 "CMakeFiles/udt.dir/src/packet.cpp.o" \
 "CMakeFiles/udt.dir/src/queue.cpp.o" \
 "CMakeFiles/udt.dir/src/common.cpp.o" \
-"CMakeFiles/udt.dir/src/window.cpp.o"
+"CMakeFiles/udt.dir/src/window.cpp.o" \
+"CMakeFiles/udt.dir/src/RrConfig.cpp.o"
 
 # External object files for target udt
 udt_EXTERNAL_OBJECTS =
@@ -258,9 +272,10 @@ libudt.a: CMakeFiles/udt.dir/src/packet.cpp.o
 libudt.a: CMakeFiles/udt.dir/src/queue.cpp.o
 libudt.a: CMakeFiles/udt.dir/src/common.cpp.o
 libudt.a: CMakeFiles/udt.dir/src/window.cpp.o
+libudt.a: CMakeFiles/udt.dir/src/RrConfig.cpp.o
 libudt.a: CMakeFiles/udt.dir/build.make
 libudt.a: CMakeFiles/udt.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lihai/Share/udt/udt4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX static library libudt.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lihai/Share/udt/udt4_dev3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX static library libudt.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/udt.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/udt.dir/link.txt --verbose=$(VERBOSE)
 
@@ -274,6 +289,6 @@ CMakeFiles/udt.dir/clean:
 .PHONY : CMakeFiles/udt.dir/clean
 
 CMakeFiles/udt.dir/depend:
-	cd /home/lihai/Share/udt/udt4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lihai/Share/udt/udt4 /home/lihai/Share/udt/udt4 /home/lihai/Share/udt/udt4 /home/lihai/Share/udt/udt4 /home/lihai/Share/udt/udt4/CMakeFiles/udt.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lihai/Share/udt/udt4_dev3 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lihai/Share/udt/udt4_dev3 /home/lihai/Share/udt/udt4_dev3 /home/lihai/Share/udt/udt4_dev3 /home/lihai/Share/udt/udt4_dev3 /home/lihai/Share/udt/udt4_dev3/CMakeFiles/udt.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/udt.dir/depend
 

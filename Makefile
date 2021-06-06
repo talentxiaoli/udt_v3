@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lihai/Share/udt/udt4
+CMAKE_SOURCE_DIR = /home/lihai/Share/udt/udt4_dev3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lihai/Share/udt/udt4
+CMAKE_BINARY_DIR = /home/lihai/Share/udt/udt4_dev3
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/Share/udt/udt4/CMakeFiles /home/lihai/Share/udt/udt4/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/Share/udt/udt4_dev3/CMakeFiles /home/lihai/Share/udt/udt4_dev3/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/Share/udt/udt4/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/Share/udt/udt4_dev3/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,33 @@ udt: cmake_check_build_system
 udt/fast:
 	$(MAKE) -f CMakeFiles/udt.dir/build.make CMakeFiles/udt.dir/build
 .PHONY : udt/fast
+
+src/RrConfig.o: src/RrConfig.cpp.o
+
+.PHONY : src/RrConfig.o
+
+# target to build an object file
+src/RrConfig.cpp.o:
+	$(MAKE) -f CMakeFiles/udt.dir/build.make CMakeFiles/udt.dir/src/RrConfig.cpp.o
+.PHONY : src/RrConfig.cpp.o
+
+src/RrConfig.i: src/RrConfig.cpp.i
+
+.PHONY : src/RrConfig.i
+
+# target to preprocess a source file
+src/RrConfig.cpp.i:
+	$(MAKE) -f CMakeFiles/udt.dir/build.make CMakeFiles/udt.dir/src/RrConfig.cpp.i
+.PHONY : src/RrConfig.cpp.i
+
+src/RrConfig.s: src/RrConfig.cpp.s
+
+.PHONY : src/RrConfig.s
+
+# target to generate assembly for a file
+src/RrConfig.cpp.s:
+	$(MAKE) -f CMakeFiles/udt.dir/build.make CMakeFiles/udt.dir/src/RrConfig.cpp.s
+.PHONY : src/RrConfig.cpp.s
 
 src/api.o: src/api.cpp.o
 
@@ -483,6 +510,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... udt"
 	@echo "... edit_cache"
+	@echo "... src/RrConfig.o"
+	@echo "... src/RrConfig.i"
+	@echo "... src/RrConfig.s"
 	@echo "... src/api.o"
 	@echo "... src/api.i"
 	@echo "... src/api.s"

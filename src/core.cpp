@@ -1757,6 +1757,7 @@ void CUDT::sendCtrl(int pkttype, void* lparam, void* rparam, int size)
 
       if (ack == m_iRcvLastAckAck)
          break;
+      
 
       // send out a lite ACK
       // to save time on buffer processing and bandwidth/AS measurement, a lite ACK only feeds back an ACK number
@@ -1804,7 +1805,7 @@ void CUDT::sendCtrl(int pkttype, void* lparam, void* rparam, int size)
       else
          break;
 
-      //printf("m_iRcvLastAck = %d\n", m_iRcvLastAck);
+      printf("send ack = %d\n", m_iRcvLastAck);
 
       // Send out the ACK only if has not been received by the sender before
       if (CSeqNo::seqcmp(m_iRcvLastAck, m_iRcvLastAckAck) > 0)
@@ -2039,7 +2040,7 @@ void CUDT::processCtrl(CPacket& ctrlpkt)
 
       // update sending variables
       m_iSndLastDataAck = ack;
-      printf("ackackacakack = %d\n", m_iSndLastDataAck);
+      printf("recv ack = %d\n", m_iSndLastDataAck);
       m_pSndLossList->remove(CSeqNo::decseq(m_iSndLastDataAck));
 
       CGuard::leaveCS(m_AckLock);
@@ -2273,6 +2274,9 @@ void CUDT::processCtrl(CPacket& ctrlpkt)
    }
 }
 
+int normalPacket = 0;
+int retransPacket = 0;
+
 int CUDT::packData(CPacket& packet, uint64_t& ts, int64_t& gopIndex)
 {
    int payload = 0;
@@ -2285,7 +2289,8 @@ int CUDT::packData(CPacket& packet, uint64_t& ts, int64_t& gopIndex)
       m_ullTimeDiff += entertime - m_ullTargetTime;
 
    // Loss retransmission always has higher priority.
-   if ((packet.m_iSeqNo = m_pSndLossList->getLostSeq()) >= 0)
+   //printf("loss counts = %d\n", m_pSndLossList->getLossLength());
+   if ((packet.m_iSeqNo = m_pSndLossList->getLostSeq()) >= 0 && retransPacket <= 5)
    {
       // protect m_iSndLastDataAck from updating by ACK processing
       CGuard ackguard(m_AckLock);
@@ -2297,8 +2302,8 @@ int CUDT::packData(CPacket& packet, uint64_t& ts, int64_t& gopIndex)
       int msglen;
 
       payload = m_pSndBuffer->readData(&(packet.m_pcData), offset, packet.m_iMsgNo, msglen, gopIndex);
-      printf("memememmememe\n");
-      //printf("111111111 pkt seqno = %d\n", packet.m_iSeqNo);
+
+      retransPacket++;
 
       if (-1 == payload)
       {
@@ -2336,7 +2341,18 @@ int CUDT::packData(CPacket& packet, uint64_t& ts, int64_t& gopIndex)
             m_pCC->setSndCurrSeqNo(m_iSndCurrSeqNo);
 
             packet.m_iSeqNo = m_iSndCurrSeqNo;
-            //printf("2222222222 pkt seqno = %d\n", packet.m_iSeqNo);
+
+            if (retransPacket < 5)
+               retransPacket = 0;
+            else
+               normalPacket++;
+            
+            if (normalPacket == 5)
+            {
+               retransPacket = 0;
+               normalPacket = 0;
+            }
+            
 
             // every 16 (0xF) packets, a packet pair is sent
             if (0 == (packet.m_iSeqNo & 0xF))
@@ -2403,19 +2419,19 @@ int CUDT::packData(CPacket& packet, uint64_t& ts, int64_t& gopIndex)
 
 int32_t recvGopIndex = -1;
 int32_t recvGopIndex2 = -1;
+int32_t dropBytes = 0;
 
 int CUDT::processData(CUnit* unit)
 {
    CPacket& packet = unit->m_Packet;
 
-
-   int32_t flag = (packet.m_iGopFlag & 0x80000000) >> 31;
-   int32_t gopIndex = (packet.m_iGopFlag & 0x7FFFFFFF);
-   int32_t gopIndex2 = packet.m_iGopIndex & 0x0000FFFF;
-   int32_t gopEndSeq = (packet.m_iGopIndex & 0xFFFF0000) >> 16;
-   if (flag == 1)
+   int32_t gopIndex = packet.m_iExtension1 & 0x0000FFFF;
+   int32_t gopEndSeq = (packet.m_iExtension1 & 0xFFFF0000) >> 16;
+   int32_t gopDeadFlag = (packet.m_iExtension2 & 0x80000000) >> 31;
+   int32_t gopDeadIndex = (packet.m_iExtension2 & 0x7FFFFFFF);
+   if (gopDeadFlag == 1)
    {
-      if (gopIndex != recvGopIndex)
+      if (gopDeadIndex != recvGopIndex)
       {
          // 非重传超时
          if (packet.m_iSeqNo >= m_iRcvCurrSeqNo)
@@ -2429,24 +2445,25 @@ int CUDT::processData(CUnit* unit)
             m_pRcvLossList->remove(0, gopEndSeq);
          }
          
-         recvGopIndex = gopIndex;
-         recvGopIndex2 = gopIndex2;
-         printf("drop begin seq = %d ==== flag = %d --- gopIndex = %d --- gopIndex2 = %d\n", packet.m_iSeqNo, flag, gopIndex, gopIndex2);
+         recvGopIndex = gopDeadIndex;
+         recvGopIndex2 = gopIndex;
+         printf("drop begin seq = %d ==== flag = %d --- gopDeadIndex = %d --- gopIndex = %d --- gopEndSeq = %d\n", packet.m_iSeqNo, gopDeadFlag, gopDeadIndex, gopIndex, gopEndSeq);
          return 0;
       }
-      if (recvGopIndex == gopIndex && recvGopIndex2 == gopIndex2) 
+      if (recvGopIndex == gopDeadIndex && recvGopIndex2 == gopIndex) 
       {
          // drop掉，不做处理
          printf("drop seq = %d\n", packet.m_iSeqNo);
          if (packet.m_iSeqNo >= m_iRcvCurrSeqNo)
          {
             m_iRcvCurrSeqNo = packet.m_iSeqNo;
+            m_pRcvLossList->remove(0, m_iRcvCurrSeqNo);
          }
          return  0;
       }
    }
 
-   printf("seqno = %d --- flag = %d --- gopIndex = %d --- gopIndex2 = %d --- gopEndSeq = %d\n", packet.m_iSeqNo, (packet.m_iGopFlag & 0x80000000) >> 31, (packet.m_iGopFlag & 0x7FFFFFFF), gopIndex2, gopEndSeq);
+   printf("seqno = %d --- flag = %d --- gopDeadIndex = %d --- gopIndex = %d --- gopEndSeq = %d\n", packet.m_iSeqNo, gopDeadFlag, gopDeadIndex, gopIndex, gopEndSeq);
 
    // Just heard from the peer, reset the expiration count.
    m_iEXPCount = 1;
@@ -2665,7 +2682,6 @@ void CUDT::checkTimers()
 
          // update snd U list to remove this socket
          #pragma update
-         printf("44444444444444\n");
          m_pSndQueue->m_pSndUList->update(this);
 
          releaseSynch();
@@ -2684,7 +2700,7 @@ void CUDT::checkTimers()
       {
          if ((CSeqNo::incseq(m_iSndCurrSeqNo) != m_iSndLastAck) && (m_pSndLossList->getLossLength() == 0))
          {
-            printf("777777777777\n");
+            printf("RTO 重传 m_iSndCurrSeqNo = %d --- m_iSndLastAck = %d\n", m_iSndCurrSeqNo, m_iSndLastAck);
             // resend all unacknowledged packets on timeout, but only if there is no packet in the loss list
             int32_t csn = m_iSndCurrSeqNo;
             int num = m_pSndLossList->insert(m_iSndLastAck, csn);

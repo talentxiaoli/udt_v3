@@ -34,6 +34,7 @@ set(SOURCES
 	src/queue.cpp
 	src/common.cpp
 	src/window.cpp
+	src/RrConfig.cpp
 )
 
 include_directories(src)

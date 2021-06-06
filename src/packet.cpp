@@ -159,8 +159,8 @@ m_iSeqNo((int32_t&)(m_nHeader[0])),
 m_iMsgNo((int32_t&)(m_nHeader[1])),
 m_iTimeStamp((int32_t&)(m_nHeader[2])),
 m_iID((int32_t&)(m_nHeader[3])),
-m_iGopFlag((int32_t&)(m_nHeader[4])),
-m_iGopIndex((int32_t&)(m_nHeader[5])),
+m_iExtension1((int32_t&)(m_nHeader[4])),
+m_iExtension2((int32_t&)(m_nHeader[5])),
 m_pcData((char*&)(m_PacketVector[1].iov_base)),
 __pad()
 {

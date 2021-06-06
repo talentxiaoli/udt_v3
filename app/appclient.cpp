@@ -112,7 +112,6 @@ int main(int argc, char* argv[])
    int totalSendSize = 0;
    for (int i = 0; i < 10; i ++)
    {
-      usleep(30000);
       memset(data, i + 48, size);
       for (int j = 0;j < 5;j++)
       {
@@ -133,6 +132,7 @@ int main(int argc, char* argv[])
 
          if (ssize < size)
             break;
+         usleep(6000);
       }
       gopIndex++;
    }
